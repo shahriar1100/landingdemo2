@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lumora — effortless fashion for every version of you." />
+  <title>Lumora — The Spring Edit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement">Complimentary delivery on orders over $80 <span>·</span> 14-day easy returns</div>
+  <header class="nav-wrap" id="top">
+    <a class="brand" href="#top" aria-label="Lumora home"><span class="brand-mark">L</span><span>LUMORA<small>MODERN FEMININE</small></span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a class="active" href="#new">New in</a><a href="#shop">Shop</a><a href="#edit">The edit</a><a href="#story">Our story</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search"><svg><use href="#icon-search"/></svg></button>
+      <button class="icon-btn" id="wishBtn" aria-label="Wishlist"><svg><use href="#icon-heart"/></svg><span class="count" id="wishCount">0</span></button>
+      <button class="icon-btn" id="cartBtn" aria-label="Shopping bag"><svg><use href="#icon-bag"/></svg><span class="count" id="cartCount">0</span></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="new">
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-copy reveal">
+        <span class="eyebrow">THE SPRING EDIT · 2026</span>
+        <h1>Wear the<br><em>moment.</em></h1>
+        <p>Soft tailoring, fluid silhouettes and color that feels like a fresh beginning.</p>
+        <div class="hero-cta"><a class="btn primary" href="#shop">Shop the edit <span>↗</span></a><button class="play" id="storyBtn"><i>▶</i> Our story</button></div>
+      </div>
+      <div class="hero-note">01 <span></span> A new season of self-expression</div>
+      <a class="scroll" href="#shop">SCROLL <span>↓</span></a>
+    </section>
+
+    <section class="trust-strip" aria-label="Our promises">
+      <div><strong>Free delivery</strong><small>Orders $80 and above</small></div>
+      <div><strong>Conscious choices</strong><small>Thoughtfully sourced fabrics</small></div>
+      <div><strong>Easy returns</strong><small>14 days, no stress</small></div>
+      <div><strong>Secure checkout</strong><small>Protected payments</small></div>
+    </section>
+
+    <section class="section categories" id="edit">
+      <div class="section-head reveal"><div><span class="eyebrow">SHOP YOUR MOOD</span><h2>Find your <em>signature.</em></h2></div><p>Four moods. Endless ways to make them yours.</p></div>
+      <div class="category-grid">
+        <article class="category-card tall reveal"><img src="assets/lumora-campaign.png" style="object-position:12% center" alt="Woman in a cream tailored suit"><div><span>01</span><h3>Modern tailoring</h3><button class="link-filter" data-category="Tailoring">Explore collection →</button></div></article>
+        <article class="category-card reveal"><img src="assets/lumora-campaign.png" style="object-position:40% center" alt="Woman wearing a pink floral dress"><div><span>02</span><h3>Garden romance</h3><button class="link-filter" data-category="Dresses">Explore collection →</button></div></article>
+        <article class="category-card reveal"><img src="assets/lumora-campaign.png" style="object-position:69% center" alt="Woman wearing a sage green co-ord"><div><span>03</span><h3>Soft structure</h3><button class="link-filter" data-category="Sets">Explore collection →</button></div></article>
+      </div>
+    </section>
+
+    <section class="section shop" id="shop">
+      <div class="section-head reveal"><div><span class="eyebrow">CURATED FOR YOU</span><h2>The most <em>loved.</em></h2></div><button class="text-link" id="viewAll">View all pieces <span>↗</span></button></div>
+      <div class="filter-row" role="tablist"><button class="filter active" data-filter="All">All</button><button class="filter" data-filter="Dresses">Dresses</button><button class="filter" data-filter="Tailoring">Tailoring</button><button class="filter" data-filter="Sets">Sets</button><button class="filter" data-filter="Evening">Evening</button></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="campaign reveal" id="story">
+      <div class="campaign-photo"><img src="assets/lumora-campaign.png" alt="Lumora spring campaign"><span>THE LUMORA JOURNAL · VOL. 04</span></div>
+      <div class="campaign-copy"><span class="eyebrow light">OUR PHILOSOPHY</span><h2>Made to move<br>with your <em>life.</em></h2><p>We design versatile pieces that look considered and feel effortless—from the first coffee to the last song.</p><a href="#shop" class="btn pale">Discover our world <span>↗</span></a><div class="quote">“Confidence is the best thing you can wear.”</div></div>
+    </section>
+
+    <section class="section newsletter reveal">
+      <div><span class="eyebrow">THE INNER CIRCLE</span><h2>A little beauty,<br><em>in your inbox.</em></h2></div>
+      <form id="newsletterForm"><p>New edits, private offers and studio notes—sent occasionally.</p><label><input type="email" id="email" required placeholder="Email address"><button type="submit">Join us <span>→</span></button></label><small>By subscribing, you agree to our privacy policy.</small></form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><a class="brand inverted" href="#top"><span class="brand-mark">L</span><span>LUMORA<small>MODERN FEMININE</small></span></a><p>Considered clothing for beautifully real lives.</p><div class="socials"><a href="#">IG</a><a href="#">PT</a><a href="#">TK</a></div></div>
+    <div><h4>Shop</h4><a href="#new">New arrivals</a><a href="#shop">Best sellers</a><a href="#shop">Dresses</a><a href="#shop">Tailoring</a></div>
+    <div><h4>Help</h4><a href="#">Delivery & returns</a><a href="#">Size guide</a><a href="#">Contact</a><a href="#">FAQ</a></div>
+    <div><h4>Visit</h4><p>18 Rosewood Lane<br>New York, NY 10012</p><p>Mon–Sat · 10–7</p></div>
+    <div class="copyright"><span>© 2026 Lumora Studio</span><span>Privacy · Terms · Accessibility</span></div>
+  </footer>
+
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true"><button class="close" data-close="search">×</button><div><span class="eyebrow">FIND YOUR NEXT FAVORITE</span><label><input id="searchInput" placeholder="Search dresses, tailoring, sets…"><button id="searchGo">→</button></label><p id="searchHint">Try “dress” or “sage”</p></div></div>
+  <aside class="drawer" id="cartDrawer" aria-hidden="true"><div class="drawer-head"><h3>Your bag <span id="drawerCount">(0)</span></h3><button class="close" data-close="cart">×</button></div><div class="drawer-body" id="cartItems"></div><div class="drawer-foot"><div class="promo"><input id="promoInput" placeholder="Promo code"><button id="promoBtn">Apply</button></div><p><span>Subtotal</span><strong id="subtotal">$0.00</strong></p><small>Taxes and shipping calculated at checkout.</small><button class="btn primary checkout" id="checkoutBtn">Secure checkout <span>→</span></button></div></aside>
+  <div class="backdrop" id="backdrop"></div>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal" id="checkoutModal"><button class="close" data-close="checkout">×</button><div class="success-icon">✓</div><span class="eyebrow">READY WHEN YOU ARE</span><h2>Demo checkout</h2><p>Your bag is ready. Connect a payment provider to accept real orders.</p><button class="btn primary" data-close="checkout">Continue shopping</button></div>
+
+  <svg style="display:none" aria-hidden="true"><symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol><symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></symbol><symbol id="icon-bag" viewBox="0 0 24 24"><path d="M6 8h12l1 13H5L6 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></symbol></svg>
+  <script src="app.js"></script>
+</body>
+</html>
