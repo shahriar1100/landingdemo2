@@ -1,0 +1,10 @@
+{
+  "name": "lumora-storefront",
+  "private": true,
+  "scripts": {
+    "test:mobile": "playwright test tests/mobile.spec.js --reporter=line"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
+}
