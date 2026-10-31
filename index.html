@@ -85,6 +85,20 @@
   <aside class="drawer" id="cartDrawer" aria-hidden="true"><div class="drawer-head"><h3>Your bag <span id="drawerCount">(0)</span></h3><button class="close" data-close="cart">×</button></div><div class="drawer-body" id="cartItems"></div><div class="drawer-foot"><div class="promo"><input id="promoInput" placeholder="Promo code"><button id="promoBtn">Apply</button></div><p><span>Subtotal</span><strong id="subtotal">$0.00</strong></p><small>Taxes and shipping calculated at checkout.</small><button class="btn primary checkout" id="checkoutBtn">Secure checkout <span>→</span></button></div></aside>
   <div class="backdrop" id="backdrop"></div>
   <div class="toast" id="toast" role="status"></div>
+  <section class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="productModalTitle">
+    <button class="close product-modal-close" data-close="product" aria-label="Close product details">×</button>
+    <div class="product-modal-media"><img id="productModalImage" src="assets/lumora-campaign.png" alt=""></div>
+    <div class="product-modal-content">
+      <span class="eyebrow" id="productModalCategory">NEW COLLECTION</span>
+      <div class="product-modal-heading"><h2 id="productModalTitle"></h2><strong id="productModalPrice"></strong></div>
+      <div class="product-rating"><span>★★★★★</span> 4.9 · 128 reviews</div>
+      <p id="productModalDescription"></p>
+      <div class="product-option"><div><strong>Color</strong><span id="selectedColor">Blush</span></div><div class="product-colors" id="productModalColors"></div></div>
+      <div class="product-option"><div><strong>Size</strong><button class="size-guide">Size guide</button></div><div class="product-sizes" id="productSizes"><button>XS</button><button>S</button><button class="active">M</button><button>L</button><button>XL</button></div></div>
+      <div class="product-buy-row"><div class="modal-qty"><button id="modalQtyMinus" aria-label="Decrease quantity">−</button><span id="modalQty">1</span><button id="modalQtyPlus" aria-label="Increase quantity">+</button></div><button class="btn primary" id="modalAddBtn">Add to bag <span id="modalAddPrice"></span></button></div>
+      <div class="product-benefits"><span>◇ Free delivery over $80</span><span>↺ Easy 14-day returns</span></div>
+    </div>
+  </section>
   <div class="modal" id="checkoutModal"><button class="close" data-close="checkout">×</button><div class="success-icon">✓</div><span class="eyebrow">READY WHEN YOU ARE</span><h2>Demo checkout</h2><p>Your bag is ready. Connect a payment provider to accept real orders.</p><button class="btn primary" data-close="checkout">Continue shopping</button></div>
 
   <svg style="display:none" aria-hidden="true"><symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol><symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></symbol><symbol id="icon-bag" viewBox="0 0 24 24"><path d="M6 8h12l1 13H5L6 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></symbol></svg>

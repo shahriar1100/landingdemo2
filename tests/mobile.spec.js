@@ -12,6 +12,20 @@ test('mobile storefront interactions work', async ({ page }) => {
 
   await expect(page.locator('#productGrid .product')).toHaveCount(4);
 
+  await page.locator('#productGrid .product').first().click({ position: { x: 70, y: 120 } });
+  await expect(page.locator('#productModal')).toHaveClass(/open/);
+  await expect(page.locator('#productModal')).toHaveCSS('opacity', '1');
+  await expect(page.locator('#productModalTitle')).toHaveText('Rosalie Bloom Dress');
+  await page.screenshot({ path: 'test-results/product-modal-mobile.png', fullPage: false });
+  await page.locator('#modalQtyPlus').click();
+  await expect(page.locator('#modalQty')).toHaveText('2');
+  await page.locator('#modalAddBtn').click();
+  await expect(page.locator('#productModal')).not.toHaveClass(/open/);
+  await expect(page.locator('#cartDrawer')).toHaveClass(/open/);
+  await expect(page.locator('#cartCount')).toHaveText('2');
+  await page.locator('[data-remove]').click();
+  await page.locator('[data-close="cart"]').click();
+
   await page.locator('#menuBtn').click();
   await expect(page.locator('.desktop-nav')).toHaveClass(/mobile/);
   const phoneMenuBox = await page.locator('.desktop-nav').boundingBox();

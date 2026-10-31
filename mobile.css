@@ -3,6 +3,193 @@ body.ui-open {
   overscroll-behavior: none;
 }
 
+.product {
+  cursor: pointer;
+}
+
+.product:focus-visible {
+  outline: 2px solid var(--wine);
+  outline-offset: 4px;
+}
+
+.product-modal {
+  position: fixed;
+  z-index: 120;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
+  width: min(980px, 94vw);
+  max-height: 92dvh;
+  overflow: hidden;
+  background: var(--paper);
+  box-shadow: 0 30px 100px rgba(37, 6, 18, .32);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -46%) scale(.97);
+  transition: opacity .3s ease, transform .35s ease, visibility .3s;
+}
+
+.product-modal.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.product-modal-close {
+  position: absolute;
+  z-index: 2;
+  right: 18px;
+  top: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(251, 248, 243, .92);
+}
+
+.product-modal-media {
+  min-height: 630px;
+  overflow: hidden;
+  background: var(--blush);
+}
+
+.product-modal-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-modal-content {
+  padding: 62px 48px 42px;
+  overflow-y: auto;
+}
+
+.product-modal-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.product-modal-heading h2 {
+  margin: 0;
+  font: 600 clamp(31px, 3vw, 46px)/1.05 var(--serif);
+  letter-spacing: -.035em;
+}
+
+.product-modal-heading strong {
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.product-rating {
+  margin-top: 14px;
+  color: #7c7074;
+  font-size: 10px;
+}
+
+.product-rating span {
+  color: #be8c24;
+  letter-spacing: .08em;
+}
+
+.product-modal-content > p {
+  margin: 26px 0;
+  color: #6f6669;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.product-option {
+  padding: 19px 0;
+  border-top: 1px solid var(--line);
+}
+
+.product-option > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+  font-size: 10px;
+}
+
+.product-option > div:first-child span,
+.size-guide {
+  color: #7a6f73;
+  font-size: 9px;
+}
+
+.size-guide {
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  padding: 0;
+  background: none;
+}
+
+.product-colors,
+.product-sizes {
+  display: flex;
+  gap: 9px;
+}
+
+.product-colors button {
+  width: 30px;
+  height: 30px;
+  border: 6px solid var(--paper);
+  border-radius: 50%;
+  background: var(--swatch);
+  outline: 1px solid var(--line);
+}
+
+.product-colors button.active {
+  outline: 2px solid var(--deep);
+}
+
+.product-sizes button {
+  width: 42px;
+  height: 38px;
+  border: 1px solid var(--line);
+  background: transparent;
+  font-size: 10px;
+}
+
+.product-sizes button.active {
+  border-color: var(--deep);
+  background: var(--deep);
+  color: #fff;
+}
+
+.product-buy-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-qty {
+  display: flex;
+  border: 1px solid var(--line);
+}
+
+.modal-qty button,
+.modal-qty span {
+  width: 37px;
+  min-height: 50px;
+  border: 0;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  font-size: 11px;
+}
+
+.product-benefits {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 18px;
+  color: #746b6e;
+  font-size: 8px;
+}
+
 button,
 a,
 input {
@@ -96,6 +283,48 @@ input {
   .search-overlay,
   .modal {
     -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 700px) {
+  .product-modal {
+    inset: 0;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100dvh;
+    max-height: none;
+    overflow-y: auto;
+    transform: translateY(30px);
+  }
+
+  .product-modal.open {
+    transform: none;
+  }
+
+  .product-modal-media {
+    height: 46dvh;
+    min-height: 340px;
+  }
+
+  .product-modal-content {
+    padding: 35px 20px calc(30px + env(safe-area-inset-bottom));
+    overflow: visible;
+  }
+
+  .product-modal-heading h2 {
+    font-size: 31px;
+  }
+
+  .product-buy-row {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    margin-inline: -20px;
+    padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+    background: var(--paper);
+    box-shadow: 0 -10px 25px rgba(41, 10, 23, .08);
   }
 }
 
