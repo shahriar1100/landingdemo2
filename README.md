@@ -4,7 +4,7 @@ A fast, responsive fashion ecommerce landing page with animated editorial sectio
 
 ## Preview locally
 
-Serve the `dist` directory with any static web server.
+Serve the repository root with any static web server.
 
 ## Deployment
 
