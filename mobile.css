@@ -12,27 +12,28 @@ input {
 @media (max-width: 900px) {
   .nav-wrap {
     z-index: 100;
+    --mobile-nav-height: 82px;
+  }
+
+  .nav-wrap.scrolled {
+    --mobile-nav-height: 66px;
   }
 
   .desktop-nav.mobile {
     display: flex;
-    position: fixed;
-    top: 116px;
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
-    height: calc(100dvh - 116px);
+    width: 100vw;
+    height: calc(100dvh - var(--mobile-nav-height));
     padding: 44px 28px;
     flex-direction: column;
     gap: 0;
-    background: rgba(251, 248, 243, .99);
+    background: var(--paper);
     border-top: 1px solid var(--line);
     z-index: 99;
     overflow-y: auto;
-  }
-
-  .nav-wrap.scrolled + main .desktop-nav.mobile,
-  .desktop-nav.mobile {
-    top: 116px;
   }
 
   .desktop-nav.mobile a {
@@ -50,12 +51,31 @@ input {
 
   .menu-btn.open span:first-child {
     transform: rotate(45deg);
-    margin: -1px;
   }
 
   .menu-btn.open span:last-child {
     transform: rotate(-45deg);
-    margin: -1px;
+  }
+
+  .menu-btn span {
+    position: absolute;
+    left: 13px;
+    width: 18px;
+    margin: 0;
+    transition: top .2s ease, transform .2s ease;
+  }
+
+  .menu-btn span:first-child {
+    top: 17px;
+  }
+
+  .menu-btn span:last-child {
+    top: 25px;
+  }
+
+  .menu-btn.open span:first-child,
+  .menu-btn.open span:last-child {
+    top: 21px;
   }
 
   .quick-add {

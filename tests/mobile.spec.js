@@ -14,6 +14,10 @@ test('mobile storefront interactions work', async ({ page }) => {
 
   await page.locator('#menuBtn').click();
   await expect(page.locator('.desktop-nav')).toHaveClass(/mobile/);
+  const phoneMenuBox = await page.locator('.desktop-nav').boundingBox();
+  expect(phoneMenuBox.y).toBeLessThan(130);
+  expect(phoneMenuBox.height).toBeGreaterThan(650);
+  await page.screenshot({ path: 'test-results/mobile-menu.png', fullPage: false });
   await page.locator('#menuBtn').click();
 
   await page.locator('#searchBtn').click();
@@ -42,6 +46,9 @@ test('mobile storefront interactions work', async ({ page }) => {
   await page.locator('#menuBtn').click();
   await expect(page.locator('.desktop-nav')).toBeVisible();
   await expect(page.locator('.desktop-nav')).toHaveClass(/mobile/);
+  const tabletMenuBox = await page.locator('.desktop-nav').boundingBox();
+  expect(tabletMenuBox.y).toBeLessThan(130);
+  expect(tabletMenuBox.width).toBe(768);
 
   expect(errors).toEqual([]);
 });
